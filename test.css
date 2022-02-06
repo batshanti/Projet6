@@ -1,6 +1,67 @@
-#test
+
+#header
+{	
+	display: flex;
+	border: 2px black solid;
+	width: 80%;
+	margin: auto;
+	background-color: #c4bebd ;
+	justify-content: space-around;
+	font-size: x-large;
+}
+
+#logo
+{
+	height: 200px;
+	
+}
+
+.header-a
+{	
+
+	color: black;
+	margin: auto;
+}
+
+#bestFilmSection
+{
+	display: flex;
+	border: 2px black solid;
+	width: 80%;
+	margin: auto;
+	justify-content: space-around;
+	background-color: black;
+}
+
+#article-BestFilm
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
+	width: 60%;
+	text-align: center
+}
+
+#aside-picture
+{
+	width: 30%;
+	background-image: url('https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UY268_CR72,0,182,268_AL_.jpg');
+	background-position: center;
+	background-repeat: no-repeat round;
+}
+
+
+
+
+
+
+
+
+
+/*#test
 {
 	border: 2px black solid;
 	height: 300px;
 	width: 60%;
-}
+}*/

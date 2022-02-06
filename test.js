@@ -7,7 +7,7 @@ async function getSomething() {
 	/*console.log(bestFilm);*/
 	console.log(img);
 	myElement.style.backgroundImage = 'url(' + img + ')';
-}
+ }
 
 getSomething();
 
@@ -17,3 +17,4 @@ let data = await response.text();
 console.log(data);
 */
 
+l
