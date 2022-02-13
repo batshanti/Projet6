@@ -44,9 +44,15 @@
 	text-align: center
 }
 
-#aside-picture
+#titreBestFilm
 {
-	width: 30%;
+	font-size: 300%;
+}
+
+#aside-picture
+{	
+	margin-top: 5%;
+	width: 20%;
 	background-position: center;
 	background-repeat: no-repeat round;
 }
