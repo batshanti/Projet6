@@ -16,17 +16,28 @@ fetch("http://localhost:8000/api/v1/titles?sort_by=-imdb_score").then(function(r
 })        
 
 
+function getMovies (url, idName) {
 
-fetch("http://localhost:8000/api/v1/titles/?genre=Sci-Fi").then(function(res){
-    return res.json()
+    fetch(url).then(function(res){
+        return res.json()
 }).then(function(data){
-    console.log("A")
     data.results.forEach(function(oneMovie) {
-        new Movie(oneMovie,"bestFilmSection1")
-    })
+        new Movie(oneMovie, idName)
+    })    
+})
+    fetch(url+"&page=2").then(function(res){
+        return res.json()
+}).then(function(data){
+    data.results.splice(1, 2).forEach(function(oneMovie) {
+        new Movie(oneMovie, idName)
+    })  
 })
 
-fetch("http://localhost:8000/api/v1/titles?genre=thriller").then(function(res){
+}
+
+
+
+/*fetch("http://localhost:8000/api/v1/titles?genre=thriller").then(function(res){
     return res.json()
 }).then(function(data){
     console.log("B")
@@ -42,5 +53,12 @@ fetch("http://localhost:8000/api/v1/titles/?genre=Action").then(function(res){
     data.results.forEach(function(oneMovie) {
         new Movie(oneMovie,"bestFilmSection3")
     })
-})
+})*/
 
+getMovies("http://localhost:8000/api/v1/titles/?-imdb_score", "bestFilmImdb")
+getMovies("http://localhost:8000/api/v1/titles/?genre=Sci-Fi", "bestFilmSection1")
+getMovies("http://localhost:8000/api/v1/titles/?genre=thriller", "bestFilmSection2")
+getMovies("http://localhost:8000/api/v1/titles/?genre=Action", "bestFilmSection3")
+
+
+/*http://localhost:8000/api/v1/titles/?genre=Sci-Fi&page=2*/
