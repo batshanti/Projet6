@@ -1,19 +1,51 @@
 class Movie {
-	constructor(url, titre, description, urlImage) {
-		this.url = url;
-		this.titre = titre;
-		this.description = description;
-		this.urlImage = urlImage;
-	}
+    constructor(data, idOfContainer) {
+        this.id = data.id
+        this.data = data
+        this.idOfContainer = idOfContainer
+        this.addInDom()
+    }
 
-	static async getMovieById(id){
-		let response = await fetch('http://localhost:8000/api/v1/titles/'+id+'?format=json');
-		let data = await response.json()
-		let url = data.url;
-		let titre = data.title;
-		let description = data.description;
-		let urlImage = data.image_url;
-		return new Movie(url, titre, description, urlImage);
-	}
+    getMovieById() {
+        let that = this
+        fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log("Voici les données complètes du film cliqué : ")
+                console.log(data)
+                // on ajoute la modale ici
+        })
+    }
+
+    addInDom() {
+        // Create article
+        let article = document.createElement("article")
+        article.classList.add("movie")
+
+        // Create h2
+        let h2 = document.createElement("h2")
+        h2.textContent = this.data.title
+
+        // Create link
+        let link = document.createElement("a")
+
+        // Create img
+        let img = document.createElement("img")
+        img.src = this.data.image_url
+
+        // Create p
+
+        link.append(img)
+        article.append(h2)
+        article.append(link)
+
+        let that = this
+        article.addEventListener("click", function(){
+            alert("Film cliqué : " + that.id)
+            that.getMovieById()
+        })
+        document.getElementById(this.idOfContainer).append(article)
+    }
 
 }

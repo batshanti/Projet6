@@ -23,7 +23,7 @@
 	margin: auto;
 }
 
-#bestFilmSection
+#OnebestFilmSection
 {
 	display: flex;
 	border: 2px black solid;
@@ -31,6 +31,7 @@
 	margin: auto;
 	justify-content: space-around;
 	background-color: black;
+	color : white;
 }
 
 #article-BestFilm
@@ -46,22 +47,31 @@
 #aside-picture
 {
 	width: 30%;
-	background-image: url('https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UY268_CR72,0,182,268_AL_.jpg');
 	background-position: center;
 	background-repeat: no-repeat round;
 }
 
-
-
-
-
-
-
-
-
-/*#test
+#bestFilmSection1, #bestFilmSection2, #bestFilmSection3
 {
+	display: flex;
 	border: 2px black solid;
-	height: 300px;
+	width: 80%;
+	margin: auto;
+	justify-content: space-around;
+	background-color: black;
+}
+
+.movie
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
 	width: 60%;
-}*/
+	text-align: center
+}
+
+.movie:hover {
+	cursor:pointer;
+}
+
