@@ -37,6 +37,6 @@ function getMovies (url, idName) {
 }
 
 getMovies("http://localhost:8000/api/v1/titles/?-imdb_score", "bestFilmImdb")
-getMovies("http://localhost:8000/api/v1/titles/?genre=Sci-Fi", "bestFilmSection1")
-getMovies("http://localhost:8000/api/v1/titles/?genre=thriller", "bestFilmSection2")
-getMovies("http://localhost:8000/api/v1/titles/?genre=Action", "bestFilmSection3")
+getMovies("http://localhost:8000/api/v1/titles/?&genre=Sci-Fi&sort_by=-imdb_score", "bestFilmSection1")
+getMovies("http://localhost:8000/api/v1/titles/?genre=thriller&sort_by=-imdb_score", "bestFilmSection2")
+getMovies("http://localhost:8000/api/v1/titles/?genre=Action&sort_by=-imdb_score", "bestFilmSection3")
