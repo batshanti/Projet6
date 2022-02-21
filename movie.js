@@ -12,10 +12,19 @@ class Movie {
             .then(function (response) {
                 return response.json()
             }).then(function (data) {
-                console.log("Voici les données complètes du film cliqué : ")
-                console.log(data)
-                // on ajoute la modale ici
+              document.getElementById("modalePic").src = data.image_url
+              document.getElementById("modale_title").innerHTML = data.original_title
+              document.getElementById("genres").innerHTML = "Genres : " + data.genres
+              document.getElementById("date").innerHTML = "Date : " + data.year
+              document.getElementById("rated").innerHTML = "Rated : " + data.rated
+              document.getElementById("imdb_score").innerHTML = "Imdb score : " + data.imdb_score
+              document.getElementById("directors").innerHTML = "Directors : " + data.directors
+              document.getElementById("duration").innerHTML = "Duration : " + data.duration
+              document.getElementById("duration").innerHTML = "Duration : " + data.duration + " min"
+              document.getElementById("countries").innerHTML = "Countries : " + data.countries
+              document.getElementById("synopsis").innerHTML = "Synopsis : " + data.long_description
         })
+        
     }
 
     addInDom() {
@@ -42,7 +51,6 @@ class Movie {
 
         let that = this
         article.addEventListener("click", function(){
-            alert("Film cliqué : " + that.id)
             that.getMovieById()
         })
         document.getElementById(this.idOfContainer).append(article)

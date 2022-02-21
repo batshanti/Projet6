@@ -104,3 +104,30 @@ body
 	cursor: pointer;
 	margin-top: 9%;
 }
+
+#modale
+{
+
+	width: 60%;
+	margin: auto;
+	background-color: black;
+	color: white;
+}
+
+#movieDescription
+{
+
+
+}
+
+#modale img
+{
+
+	width: 30%;
+
+}
+
+#synopsis
+{
+	width: 50%;
+}
