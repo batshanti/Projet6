@@ -68,7 +68,7 @@ body
 
 #bestFilmImdb, #bestFilmSection1, #bestFilmSection2, #bestFilmSection3
 {
-	width: 160%;
+	width: 154%;
 	margin: auto;
 	background-color: black;
 	overflow-x: hidden;
@@ -91,7 +91,7 @@ body
 	position: absolute;
 	width: 1%;
 	cursor: pointer;
-	margin-left: 0%;
+	margin-left: -2%;
  	margin-top: 9%;
 }
 
