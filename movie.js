@@ -25,7 +25,10 @@ class Movie {
               document.getElementById("synopsis").innerHTML = "Synopsis : " + data.long_description
               let modale = document.getElementById("modale")
               modale.showModal()
-
+              let quit = document.getElementById("modale_quit")
+              quit.addEventListener("click", function(){
+                    modale.close()
+              })
 
         })
         
