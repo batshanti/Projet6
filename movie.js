@@ -24,7 +24,8 @@ class Movie {
               document.getElementById("countries").innerHTML = "Countries : " + data.countries
               document.getElementById("synopsis").innerHTML = "Synopsis : " + data.long_description
               let modale = document.getElementById("modale")
-              modale.show()
+              modale.showModal()
+
 
         })
         
@@ -45,8 +46,6 @@ class Movie {
         // Create img
         let img = document.createElement("img")
         img.src = this.data.image_url
-
-        // Create p
 
         link.append(img)
         article.append(h2)

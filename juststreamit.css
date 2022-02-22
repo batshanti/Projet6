@@ -118,6 +118,11 @@ body
 	border-color: black;
 }
 
+dialog::backdrop
+{
+  background: rgba(0,0,0,0.8);
+}
+
 #movieDescription
 {	
 	display: inline-block;
