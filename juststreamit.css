@@ -107,27 +107,29 @@ body
 
 #modale
 {
-
+	position: fixed;
 	width: 60%;
-	margin: auto;
 	background-color: black;
 	color: white;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-color: black;
 }
 
 #movieDescription
-{
-
-
+{	
+	display: inline-block;
+	width: 40%;
 }
 
 #modale img
 {
-
 	width: 30%;
-
 }
 
 #synopsis
 {
-	width: 50%;
+	width: 85%;
 }

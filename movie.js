@@ -23,6 +23,9 @@ class Movie {
               document.getElementById("duration").innerHTML = "Duration : " + data.duration + " min"
               document.getElementById("countries").innerHTML = "Countries : " + data.countries
               document.getElementById("synopsis").innerHTML = "Synopsis : " + data.long_description
+              let modale = document.getElementById("modale")
+              modale.show()
+
         })
         
     }
