@@ -1,7 +1,9 @@
 class Movie {
-    constructor(data, idOfContainer) {
+    constructor(data, idOfContainer, inDom=1) {
         this.id = data.id
+        console.log(this.id)
         this.data = data
+        this.inDom = inDom
         this.idOfContainer = idOfContainer
         this.addInDom()
     }
@@ -12,22 +14,81 @@ class Movie {
             .then(function (response) {
                 return response.json()
             }).then(function (data) {
-              document.getElementById("modalePic").src = data.image_url
-              document.getElementById("modale_title").innerHTML = data.original_title
-              document.getElementById("genres").innerHTML = "Genres : " + data.genres
-              document.getElementById("date").innerHTML = "Date : " + data.year
-              document.getElementById("rated").innerHTML = "Rated : " + data.rated
-              document.getElementById("imdb_score").innerHTML = "Imdb score : " + data.imdb_score
-              document.getElementById("directors").innerHTML = "Directors : " + data.directors
-              document.getElementById("duration").innerHTML = "Duration : " + data.duration
-              document.getElementById("duration").innerHTML = "Duration : " + data.duration + " min"
-              document.getElementById("countries").innerHTML = "Countries : " + data.countries
-              document.getElementById("synopsis").innerHTML = "Synopsis : " + data.long_description
-              let modale = document.getElementById("modale")
-              modale.showModal()
+
+              // Create dialog
+              let dialog = document.createElement("dialog")
+              dialog.setAttribute("id", "modale")
+
+              // Create span
+              let span = document.createElement("span")
+              span.setAttribute("id", "modale_quit")
+              span.textContent = "X"
+
+              // Create img
+              let img = document.createElement("img")
+              img.setAttribute("id", "modalePic")
+              img.setAttribute("alt", "imageMovie")
+              img.src = data.image_url
+
+              // Create article
+              let article = document.createElement("article")
+              article.setAttribute("id", "movieDescription")
+
+              // Create H1
+              let h1 = document.createElement("h1")
+              h1.setAttribute("id", "modale_title")
+              h1.textContent = data.original_title
+
+              // Create ul
+              let ul = document.createElement("ul")
+              ul.setAttribute("id", "liste_infos")
+
+              // Create li
+              let liGenre = document.createElement("li")
+              liGenre.textContent = "Genres : " + data.genres
+              ul.append(liGenre)
+
+              let liDate = document.createElement("li")
+              liDate.textContent = "Date : " + data.year
+              ul.append(liDate)
+
+              let liRated = document.createElement("li")
+              liRated.textContent = "Rated : " + data.rated
+              ul.append(liRated)
+
+              let liImdb = document.createElement("li")
+              liImdb.textContent = "Imdb score : " + data.imdb_score
+              ul.append(liImdb)
+
+              let liDirectors = document.createElement("li")
+              liDirectors.textContent = "Directors : " + data.directors
+              ul.append(liDirectors)
+
+              let liDuration = document.createElement("li")
+              liDuration.textContent = "Duration : " + data.duration + " min"
+              ul.append(liDuration)
+
+              let liCountries = document.createElement("li")
+              liCountries.textContent = "Countries : " + data.countries
+              ul.append(liCountries)
+
+              let p = document.createElement("p")
+              p.setAttribute("id", "movieSynopsis")
+              p.textContent = "Synopsis :" + data.long_description
+              
+              dialog.append(span)
+              dialog.append(img)
+              dialog.append(h1)
+              dialog.append(ul)
+              dialog.append(p)
+
+              document.getElementById("body").append(dialog)
+              dialog.showModal()
+
               let quit = document.getElementById("modale_quit")
               quit.addEventListener("click", function(){
                     modale.close()
+                    dialog.remove()
               })
 
         })

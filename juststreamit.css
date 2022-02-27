@@ -132,6 +132,18 @@ dialog::backdrop
 #modale img
 {
 	width: 30%;
+	float: left;
+}
+
+#modale h1
+{
+	text-align: center;
+}
+
+#modale ul
+{
+	list-style: none;
+	margin-left: 28%;
 }
 
 #synopsis
@@ -145,4 +157,9 @@ dialog::backdrop
 	text-decoration: none;
 	font-size: 25px;
 	color: white;
+}
+
+#modale_quit:hover
+{
+	cursor:pointer;
 }
