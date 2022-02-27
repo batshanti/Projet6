@@ -146,9 +146,9 @@ dialog::backdrop
 	margin-left: 28%;
 }
 
-#synopsis
+#movieSynopsis
 {
-	width: 85%;
+	margin-left: 32%;
 }
 
 #modale_quit

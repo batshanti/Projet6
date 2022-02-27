@@ -64,6 +64,10 @@ class Movie {
               liDirectors.textContent = "Directors : " + data.directors
               ul.append(liDirectors)
 
+              let liActors = document.createElement("li")
+              liActors.textContent = "Actors : " + data.actors
+              ul.append(liActors)
+
               let liDuration = document.createElement("li")
               liDuration.textContent = "Duration : " + data.duration + " min"
               ul.append(liDuration)
