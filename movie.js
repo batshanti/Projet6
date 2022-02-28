@@ -5,7 +5,7 @@ class Movie {
         this.data = data
         this.inDom = inDom
         this.idOfContainer = idOfContainer
-        this.addInDom()
+        if (inDom==1) {this.addInDom()}
     }
 
     getMovieById() {
@@ -76,6 +76,7 @@ class Movie {
               liCountries.textContent = "Countries : " + data.countries
               ul.append(liCountries)
 
+              // Create p
               let p = document.createElement("p")
               p.setAttribute("id", "movieSynopsis")
               p.textContent = "Synopsis :" + data.long_description

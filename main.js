@@ -6,15 +6,47 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
         .then(function(response) {
             return response.json()
         }).then(function(data) {
-            console.log(data)
+            let bestMovie = new Movie(data, OnebestFilmSection, 0)
+            console.log(bestMovie)
+
+            let img = document.createElement("img")
+            img.setAttribute("id", "play-BestFilm")
+            img.setAttribute("alt", "picture")
+            img.setAttribute("src", "play2.png")
+
+            let h2 = document.createElement("h2")
+            h2.setAttribute("id", "titreBestFilm")
+            h2.textContent = data.original_title
+
+            let p = document.createElement("p")
+            p.setAttribute("id", "description")
+            p.textContent = data.long_description
+
+            let img2 = document.createElement("img")
+            img2.setAttribute("id", "aside-picture")
+            img2.setAttribute("alt", "picture")
+            img2.setAttribute("src", data.image_url)
+
+            let section = document.getElementById("OnebestFilmSection")    
+            
+            section.append(img2)
+            section.append(h2)
+            section.append(img)
+            section.append(p)
+            
+
+            
+
+
+/*            console.log(data)
             let img = data.image_url
             document.getElementById('titreBestFilm').innerHTML = data.title
             document.getElementById('description').innerHTML = data.long_description
             let elementUrlPic = document.getElementById('aside-picture')
-            elementUrlPic.src = img
-            /*elementUrlPic.style.backgroundImage = 'url(' + img + ')'*/
-        })    
-})        
+            elementUrlPic.src = img*/
+
+        })
+})
 
 function getAsync(url, idName) {
     return new Promise((resolve) => {

@@ -28,36 +28,44 @@ body
 
 #OnebestFilmSection
 {
-	display: flex;
 	width: 80%;
 	margin: auto;
-	justify-content: space-around;
 	background-color: black;
 	color : white;
 }
 
-#article-BestFilm
+#aside-picture
+
 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	color: white;
-	width: 60%;
-	text-align: center
+	width: 25%;	
+	margin-top: 1%;
+	float: right
 }
 
 #titreBestFilm
 {
 	font-size: 300%;
+	text-align: center;
 }
 
-#aside-picture
-{	
-	margin-top: 5%;
-	width: 20%;
-	background-position: center;
-	background-repeat: no-repeat round;
+#play-BestFilm
+
+{
+	margin-left: 30%;
+
 }
+
+#play-BestFilm:hover {
+	cursor:pointer;
+}
+
+#description
+{	
+	width: 74%;
+	padding-top: 2%;
+	text-align: center;
+}
+
 
 #container
 {
@@ -86,7 +94,7 @@ body
 	cursor:pointer;
 }
 
-#fl
+.fl
 {
 	position: absolute;
 	width: 1%;
@@ -95,7 +103,7 @@ body
  	margin-top: 9%;
 }
 
-#fr
+.fr
 {
 	width: 1%;
 	position: absolute;
