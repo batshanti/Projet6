@@ -14,6 +14,10 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
             img.setAttribute("alt", "picture")
             img.setAttribute("src", "play2.png")
 
+            img.addEventListener("click", function(){
+                bestMovie.getMovieById()
+            })
+
             let h2 = document.createElement("h2")
             h2.setAttribute("id", "titreBestFilm")
             h2.textContent = data.original_title
@@ -34,17 +38,6 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
             section.append(img)
             section.append(p)
             
-
-            
-
-
-/*            console.log(data)
-            let img = data.image_url
-            document.getElementById('titreBestFilm').innerHTML = data.title
-            document.getElementById('description').innerHTML = data.long_description
-            let elementUrlPic = document.getElementById('aside-picture')
-            elementUrlPic.src = img*/
-
         })
 })
 
