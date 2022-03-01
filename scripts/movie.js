@@ -5,10 +5,11 @@ class Movie {
         this.data = data
         this.inDom = inDom
         this.idOfContainer = idOfContainer
-        if (inDom==1) {this.addInDom()}
+        if (inDom==1) {this.addInDom(this.idOfContainer)}
     }
 
-    getMovieById() {
+
+    displayModal() {
         let that = this
         fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
             .then(function (response) {
@@ -100,31 +101,37 @@ class Movie {
         
     }
 
-    addInDom() {
-        // Create article
-        let article = document.createElement("article")
-        article.classList.add("movie")
-
-        // Create h2
-        let h2 = document.createElement("h2")
-        h2.textContent = this.data.title
-
-        // Create link
-        let link = document.createElement("a")
-
-        // Create img
-        let img = document.createElement("img")
-        img.src = this.data.image_url
-
-        link.append(img)
-        article.append(h2)
-        article.append(link)
-
-        let that = this
-        article.addEventListener("click", function(){
-            that.getMovieById()
-        })
-        document.getElementById(this.idOfContainer).append(article)
+    addInDom(id) {
+       let that = this
+       fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+      
+              // Create article
+              let article = document.createElement("article")
+              article.classList.add("movie")
+      
+              // Create h2
+              let h2 = document.createElement("h2")
+              h2.textContent = data.original_title
+      
+              // Create link
+              let link = document.createElement("a")
+      
+              // Create img
+              let img = document.createElement("img")
+              img.src = data.image_url
+      
+              link.append(img)
+              article.append(h2)
+              article.append(link)
+      
+              article.addEventListener("click", function(){
+                  that.displayModal()
+              })
+              document.getElementById(id).append(article)
+            })
     }
 
 }

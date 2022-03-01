@@ -19,7 +19,7 @@ body
 	
 }
 
-.header-a
+.headerA
 {	
 	font-size: 200%;
 	color: black;
@@ -32,6 +32,10 @@ body
 	margin: auto;
 	background-color: black;
 	color : white;
+}
+#bestFilm
+{
+	display: none;
 }
 
 #aside-picture
@@ -74,6 +78,16 @@ body
 	overflow: hidden;
 }
 
+.titre-section
+{
+	color: white;
+	text-align: center;
+	width: 70%;
+	font-size: 224%;
+	margin-bottom: 0%;
+	margin-top: 5%;
+}
+
 #bestFilmImdb, #bestFilmSection1, #bestFilmSection2, #bestFilmSection3
 {
 	width: 154%;
@@ -100,7 +114,7 @@ body
 	width: 1%;
 	cursor: pointer;
 	margin-left: -2%;
- 	margin-top: 9%;
+ 	margin-top: 13%;
 }
 
 .fr
@@ -110,7 +124,7 @@ body
 	margin-left: 81%;
 	margin-top: -10%;
 	cursor: pointer;
-	margin-top: 9%;
+	margin-top: 13%;
 }
 
 #modale

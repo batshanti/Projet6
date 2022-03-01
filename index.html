@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="juststreamit.css" />
+		<link rel="stylesheet" href="css/juststreamit.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>JustStreamIt</title>
 	</head>
 
 	<body id="body">
-		<script type="text/javascript" src="movie.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		<script src="scripts/movie.js"></script>
+		<script src="scripts/main.js"></script>
 		
 		<header id="header">
 			<a href="index.html"> <img id="logo" src="https://user.oc-static.com/upload/2020/09/18/16004298163529_P5.png" alt="logo juststreamit" title="logo juststreamit"/>
 			</a>
-			<a href="index.html" class="header-a">Accueil</a>
-			<a href="index.html" class="header-a">Catégories</a>
+			<a href="index.html" class="headerA">Accueil</a>
+			<a href="index.html" class="headerA">Categories</a>
 		</header>
 
 		<section id="OnebestFilmSection">
+			<h2 id="bestFilm">Best Film</h2>
 		</section>
 
 		<div id="container">
 		<section id="bestFilmImdb">
-			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmImdb')" src="fg.png">
-			<img class="fr" alt="f-right" onclick="translateRight('bestFilmImdb')" src="fd.png">
+			<h2 class="titre-section">Top rated films</h2>
+			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmImdb')" src="icons/fg.png">
+			<img class="fr" alt="f-right" onclick="translateRight('bestFilmImdb')" src="icons/fd.png">
 		</section>
 
 		<section id="bestFilmSection1">
-			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection1')" src="fg.png">
-			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection1')" src="fd.png">
+			<h2 class="titre-section">Top rated films : Sci-Fi</h2>
+			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection1')" src="icons/fg.png">
+			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection1')" src="icons/fd.png">
 		</section>
 
 		<section id="bestFilmSection2">
-			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection2')" src="fg.png">
-			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection2')" src="fd.png">
+			<h2 class="titre-section">Top rated films : Thriller</h2>
+			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection2')" src="icons/fg.png">
+			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection2')" src="icons/fd.png">
 		</section>
 
 		<section id="bestFilmSection3">
-			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection3')" src="fg.png">
-			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection3')" src="fd.png">
+			<h2 class="titre-section">Top rated films : Action</h2>
+			<img class="fl" alt="f-left" onclick="translateLeft('bestFilmSection3')" src="icons/fg.png">
+			<img class="fr" alt="f-right" onclick="translateRight('bestFilmSection3')" src="icons/fd.png">
 		</section>
 		</div>
 
-		<script type="text/javascript" src="translate.js"></script>
+		<script src="scripts/translate.js"></script>
 
 	</body>
 </html>

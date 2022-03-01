@@ -7,15 +7,14 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
             return response.json()
         }).then(function(data) {
             let bestMovie = new Movie(data, OnebestFilmSection, 0)
-            console.log(bestMovie)
 
             let img = document.createElement("img")
             img.setAttribute("id", "play-BestFilm")
             img.setAttribute("alt", "picture")
-            img.setAttribute("src", "play2.png")
+            img.setAttribute("src", "icons/play2.png")
 
             img.addEventListener("click", function(){
-                bestMovie.getMovieById()
+                bestMovie.displayModal()
             })
 
             let h2 = document.createElement("h2")
@@ -37,7 +36,7 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
             section.append(h2)
             section.append(img)
             section.append(p)
-            
+
         })
 })
 
@@ -45,8 +44,6 @@ function getAsync(url, idName) {
     return new Promise((resolve) => {
         getMovies1(url, idName)
         while (document.getElementById(idName).childNodes.length < 5) {}
-        console.log(document.getElementById(idName).childNodes)    
-        resolve()
     })
 }
 
@@ -84,7 +81,7 @@ async function getMovies(url, idName) {
 
 }
 
-getMovies("http://localhost:8000/api/v1/titles/?-imdb_score", "bestFilmImdb")
+getMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score", "bestFilmImdb")
 getMovies("http://localhost:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score", "bestFilmSection1")
 getMovies("http://localhost:8000/api/v1/titles/?genre=thriller&sort_by=-imdb_score", "bestFilmSection2")
 getMovies("http://localhost:8000/api/v1/titles/?genre=Action&sort_by=-imdb_score", "bestFilmSection3")
