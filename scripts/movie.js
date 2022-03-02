@@ -103,10 +103,10 @@ class Movie {
 
     addInDom(id) {
        let that = this
-       fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
+/*       fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
             .then(function (response) {
                 return response.json()
-            }).then(function (data) {
+            }).then(function (data) {*/
       
               // Create article
               let article = document.createElement("article")
@@ -114,14 +114,14 @@ class Movie {
       
               // Create h2
               let h2 = document.createElement("h2")
-              h2.textContent = data.original_title
+              h2.textContent = this.data.title
       
               // Create link
               let link = document.createElement("a")
       
               // Create img
               let img = document.createElement("img")
-              img.src = data.image_url
+              img.src = this.data.image_url
       
               link.append(img)
               article.append(h2)
@@ -131,7 +131,7 @@ class Movie {
                   that.displayModal()
               })
               document.getElementById(id).append(article)
-            })
+            
     }
 
 }

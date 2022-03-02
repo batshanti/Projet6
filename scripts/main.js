@@ -40,46 +40,24 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
         })
 })
 
-function getAsync(url, idName) {
-    return new Promise((resolve) => {
-        getMovies1(url, idName)
-        while (document.getElementById(idName).childNodes.length < 5) {}
-    })
-}
 
-function getMovies1 (url, idName) {
-   fetch(url).then(function(res){
-        return res.json()
-    }).then(function(data){
-        let tab = []
-        data.results.forEach(function(oneMovie) {
-            new Movie(oneMovie, idName)
-    })
-
-})
-
-}
-
-function getMovies2 (url, idName) {
-    fetch(url+"&page=2").then(function(res){
-        return res.json()
-    }).then(function(data){
-        let tab = []
-        data.results.splice(1, 2).forEach(function(oneMovie) {
-            new Movie(oneMovie, idName)
-    })
-
-})
-
-}
 
 async function getMovies(url, idName) {
 
-    await getAsync(url, idName)
-    console.log("zzz")
-    getMovies2(url, idName)
+    let moviePage1 = await fetch(url)
+    let resPage1 = await moviePage1.json()
+    resPage1.results.forEach(function(oneMovie) {
+        new Movie(oneMovie, idName)
 
+    })
+
+    let moviePage2 = await fetch(url+"&page=2")
+    let resPage2 = await moviePage2.json()
+    resPage2.results.splice(1, 2).forEach(function(oneMovie) {
+        new Movie(oneMovie, idName)
+    })
 }
+
 
 getMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score", "bestFilmImdb")
 getMovies("http://localhost:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score", "bestFilmSection1")
