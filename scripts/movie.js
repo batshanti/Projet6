@@ -8,6 +8,7 @@ class Movie {
         if (inDom==1) {this.addInDom(this.idOfContainer)}
     }
 
+    // Create modal
 
     displayModal() {
         let that = this
@@ -101,12 +102,10 @@ class Movie {
         
     }
 
+    // Add movie in Dom
+
     addInDom(id) {
        let that = this
-/*       fetch('http://localhost:8000/api/v1/titles/' + this.id + '?format=json')
-            .then(function (response) {
-                return response.json()
-            }).then(function (data) {*/
       
               // Create article
               let article = document.createElement("article")

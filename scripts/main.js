@@ -1,3 +1,4 @@
+/*Get best film data and create html section*/
 fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(res){
     return res.json()
 }).then(function(data){
@@ -41,6 +42,11 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score").then(function(
 })
 
 
+/**
+ * Get data of 7 movies from OCMovies-API
+ * @param { String } url
+ * @param { String } idName
+ */
 
 async function getMovies(url, idName) {
 

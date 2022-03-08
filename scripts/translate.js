@@ -7,6 +7,11 @@ let count = {
 
 }
 
+/**
+ * Allows the operation of slide-show using css translation
+ * @param { String } idName
+ */
+
 function translateRight (idName) {
     
     if (count[idName] < 2) {
@@ -17,6 +22,11 @@ function translateRight (idName) {
         count[idName] = count[idName] + 1
     }
 }
+
+/**
+ * Allows the operation of slide-show using css translation
+ * @param { String } idName
+ */
 
 function translateLeft (idName) {
 
